@@ -13,8 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :collector, Collector.Endpoint,
   http: [port: 8080],
-  url: [host: "collector.pro.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [host: "collector.pro.com", port: 80]
 
 # Do not print debug messages in production
 config :logger, level: :info
