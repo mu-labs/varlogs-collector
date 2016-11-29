@@ -38,4 +38,6 @@ config :exq,
   namespace: "events",
   concurrency: 1000,
   max_retries: 1,
-  queues: ["default"]
+  queues: ["events"]
+
+config :tirexs, :uri, "http://127.0.0.1:9200"

@@ -11,7 +11,7 @@ defmodule Collector.EventController do
   end
 
   def create(conn, _params) do
-    {:ok, ack} = Exq.Enqueuer.enqueue(Exq.Enqueuer, "default", EventWorker, [_params["events"]])
+    {:ok, ack} = Exq.Enqueuer.enqueue(Exq.Enqueuer, "events", EventWorker, [_params["events"]])
     info "Envent enqueued"
     conn
     |> put_status(:no_content)
