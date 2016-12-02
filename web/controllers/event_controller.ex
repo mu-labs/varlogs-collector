@@ -5,7 +5,7 @@ defmodule Collector.EventController do
   use Collector.Web, :controller
 
   def index(conn, _) do
-    { :ok, _, res } = get("/events/trace/_search")
+    { :ok, _, res } = get("/events/_search")
     %{ hits: %{ hits: hits } } = res
     json conn, Enum.map(hits, &(&1[:"_source"]))
   end
